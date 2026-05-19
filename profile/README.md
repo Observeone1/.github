@@ -37,15 +37,6 @@ obs export                 # pull your monitoring stack as JSON
 obs apply observeone.json  # commit it, GitOps it
 ```
 
-## How it's built
-
-A few moving parts:
-
-- Express API on Supabase Postgres
-- Playwright workers on BullMQ — the self-hostable version is [oo-workers](https://github.com/Observeone1/oo-workers)
-- React dashboard built with Vite; runs stream live over SSE
-- TypeScript CLI that speaks strict JSON both ways, so CI and agents can parse it
-
 ## License
 
 oo-workers and the CLI are Apache 2.0. The hosted platform isn't open source. Each repo states its own license.
