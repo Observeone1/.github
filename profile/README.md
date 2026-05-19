@@ -1,6 +1,6 @@
 # ObserveOne
 
-Website monitoring that runs a real browser. You write the check in plain English, we run it on Chromium, and you get pass/fail plus a video of exactly what happened.
+Website monitoring with Playwright Autopilot. Point it at a URL and it generates a real browser test suite for you. Add URL, API, and heartbeat monitoring, incidents, and status pages — run all of it from a dashboard or entirely from the CLI.
 
 [![Website](https://img.shields.io/badge/website-observeone.com-2563eb)](https://www.observeone.com)
 [![npm](https://img.shields.io/npm/v/@observeone/cli?label=%40observeone%2Fcli)](https://www.npmjs.com/package/@observeone/cli)
@@ -12,12 +12,11 @@ Website monitoring that runs a real browser. You write the check in plain Englis
 |------|-----------|
 | **[oo-workers](https://github.com/Observeone1/oo-workers)** | The monitoring engine, self-hosted. Real Playwright browser checks and JSONPath assertions. If you've run Uptime Kuma and wished it could drive a browser, this is that. `Apache-2.0` |
 | **[ObserveOne CLI](https://github.com/Observeone1/ObserveOne-CLI)** | Monitors, API checks, heartbeats, incidents, and status pages from the terminal. The config is JSON, so it lives in git like everything else. `Apache-2.0` |
-| **[browser-use](https://github.com/Observeone1/browser-use)** | Our fork of browser-use — the part that lets an AI actually click through a flow. `MIT` |
+| **[browser-use](https://github.com/Observeone1/browser-use)** | Our fork of the browser-use library for AI-driven browser automation. We track upstream and patch here. `MIT` |
 
 ## What you get
 
-- **Browser checks.** Describe the flow in plain English. We run it on real Chromium and hand back a video, not a stack trace.
-- **Playwright Autopilot.** Point it at a URL and it writes the suite. When your selectors change, it patches them instead of going red.
+- **Playwright Autopilot.** Point it at a URL and it generates the browser test suite for you, running on real Chromium. When a test breaks because your UI moved, it tries to fix the selector instead of just going red.
 - **URL, API, and heartbeat monitoring** in one place — uptime, endpoint checks, and cron liveness.
 - **Incidents and public status pages.** Open, assign, resolve.
 - **It's all JSON.** `obs export` pulls your whole setup; `obs apply` puts it back. Commit it, diff it, review it like code.
