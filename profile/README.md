@@ -20,7 +20,7 @@ Website monitoring with Playwright Autopilot. Point it at a URL and it generates
 - **URL, API, and heartbeat monitoring** in one place — uptime, endpoint checks, and cron liveness.
 - **Incidents and public status pages.** Open, assign, resolve.
 - **It's all JSON.** `obs export` pulls your whole setup; `obs apply` puts it back. Commit it, diff it, review it like code.
-- **CI that fails the build.** GitHub App with PR comments and merge blocking. GitLab and plain webhooks work too.
+- **CI integration.** A GitHub App connects your repos and runs suites on demand, or you generate a webhook token and trigger them from any pipeline yourself.
 
 ## Quick start
 
@@ -42,9 +42,9 @@ obs apply observeone.json  # commit it, GitOps it
 A few moving parts:
 
 - Express API on Supabase Postgres
-- Playwright workers on BullMQ, split by region — that's [oo-workers](https://github.com/Observeone1/oo-workers)
-- Next.js dashboard, with SSE so runs stream live
-- TypeScript CLI that speaks strict JSON in and out, so agents and CI can parse it
+- Playwright workers on BullMQ — the self-hostable version is [oo-workers](https://github.com/Observeone1/oo-workers)
+- React dashboard built with Vite; runs stream live over SSE
+- TypeScript CLI that speaks strict JSON both ways, so CI and agents can parse it
 
 ## License
 
