@@ -1,6 +1,6 @@
 # ObserveOne
 
-Website monitoring with Playwright Autopilot. Point it at a URL and it generates a real browser test suite for you. Add URL, API, and heartbeat monitoring, incidents, and status pages — run all of it from a dashboard or entirely from the CLI.
+Website monitoring with Playwright Autopilot. Point it at a URL and it generates a real browser test suite for you. Add URL, API, TCP/UDP port, TLS-certificate, database, and heartbeat monitoring, incidents, and status pages — run all of it from a dashboard or entirely from the CLI.
 
 [![Website](https://img.shields.io/badge/website-observeone.com-2563eb)](https://www.observeone.com)
 [![npm](https://img.shields.io/npm/v/@observeone/cli?label=%40observeone%2Fcli)](https://www.npmjs.com/package/@observeone/cli)
@@ -10,14 +10,14 @@ Website monitoring with Playwright Autopilot. Point it at a URL and it generates
 
 | Repo | What it is |
 |------|-----------|
-| **[oo-workers](https://github.com/Observeone1/oo-workers)** | The monitoring engine, self-hosted. Real Playwright browser checks and JSONPath assertions. If you've run Uptime Kuma and wished it could drive a browser, this is that. `Apache-2.0` |
+| **[oo-workers](https://github.com/Observeone1/oo-workers)** | The monitoring engine, self-hosted. Real Playwright browser checks, JSONPath assertions, and TCP/UDP, TLS-certificate, and database checks. If you've run Uptime Kuma and wished it could drive a browser, this is that. `Apache-2.0` |
 | **[ObserveOne CLI](https://github.com/Observeone1/ObserveOne-CLI)** | Monitors, API checks, heartbeats, incidents, and status pages from the terminal. The config is JSON, so it lives in git like everything else. `Apache-2.0` |
-| **[browser-use](https://github.com/Observeone1/browser-use)** | Our fork of the browser-use library for AI-driven browser automation. We track upstream and patch here. `MIT` |
+| **[browser-use](https://github.com/Observeone1/browser-use)** | Our fork of the browser-use library for AI-driven browser automation, patched for our stack. `MIT` |
 
 ## What you get
 
 - **Playwright Autopilot.** Point it at a URL and it generates the browser test suite for you, running on real Chromium. When a test breaks because your UI moved, it tries to fix the selector instead of just going red.
-- **URL, API, and heartbeat monitoring** in one place — uptime, endpoint checks, and cron liveness.
+- **URL, API, TCP/UDP, TLS-certificate, database, and heartbeat monitoring** in one place — uptime, endpoint checks, open ports, cert expiry, query results, and cron liveness.
 - **Incidents and public status pages.** Open, assign, resolve.
 - **It's all JSON.** `obs export` pulls your whole setup; `obs apply` puts it back. Commit it, diff it, review it like code.
 - **CI integration.** A GitHub App connects your repos and runs suites on demand, or you generate a webhook token and trigger them from any pipeline yourself.
